@@ -19,7 +19,7 @@ The YouTube application is being tested to determine its ability to play videos,
 
 `npm i chromedriver`
 
-#### Execute the test in the project with the following command:
+#### Execute the test in the project folder with the following command:
 
 `nightwatch`
 
