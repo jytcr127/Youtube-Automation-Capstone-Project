@@ -6,8 +6,6 @@ var youtubeCommands = {
             .click('@searchButton')
             .pause(3000)
             .click('@firstVideo')
-            .pause(10000)
-        this
             .pause(5000)
             .expect.element('@titleOfVideoSelected').text.to.contain(name)
         return this
@@ -94,7 +92,7 @@ module.exports = {
         videoPlaying: 'video[class = "video-stream html5-main-video"]',
         playBackSpeedSetting: 'div[class = "ytp-menuitem-content"]',
         volumeSwitcher: {
-            selector: '(//div[@class = "ytp-menuitem-content"])[3]',
+            selector: '(//div[@class = "ytp-menuitem-content"])[2]',
             locateStrategy: 'xpath'
         },
         music: {

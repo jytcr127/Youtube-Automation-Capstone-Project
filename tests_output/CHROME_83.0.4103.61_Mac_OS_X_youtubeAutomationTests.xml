@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="7">
+
+  <testsuite name="youtubeAutomationTests"
+    errors="0" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="0"
+    tests="7" time="157.4" timestamp="">
+  
+    <testcase name="Test 1: Search for a specific music video" classname="youtubeAutomationTests" time="14.53" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests" time="28.45" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests" time="29.08" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Test 4: Click each section listed under &#34;Best of Youtube and verify that user is taken to correction section&#34;" classname="youtubeAutomationTests" time="44.50" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 5: Change the language to French" classname="youtubeAutomationTests" time="11.33" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 6: Hide left side bar" classname="youtubeAutomationTests" time="4.182" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests" time="25.28" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

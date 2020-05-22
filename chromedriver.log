@@ -1,19 +1,4 @@
-Starting ChromeDriver 81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}) on port 9515
+Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 9515
 Only local connections are allowed.
-Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-[1589943407.928][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943408.107][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943433.605][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943461.357][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943489.099][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943534.195][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943535.413][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943540.063][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943540.164][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943540.826][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943545.095][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943545.994][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943549.175][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943549.357][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943550.606][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589943550.793][SEVERE]: Timed out receiving message from renderer: 0.100
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.

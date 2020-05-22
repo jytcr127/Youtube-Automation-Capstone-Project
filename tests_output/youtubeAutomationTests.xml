@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="youtubeAutomationTests"
+    errors="1" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="7"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+      [0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 81&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1129:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 81&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1129:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="Test 1: Search for a specific music video" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 4: Click each section listed under &#34;Best of Youtube and verify that user is taken to correction section&#34;" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 5: Change the language to French" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 6: Hide left side bar" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

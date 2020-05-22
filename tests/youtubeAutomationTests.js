@@ -12,13 +12,13 @@ module.exports = {
         youtube.searchMusicVideo("NCT U 엔시티 유 'BOSS' MV");
     },
     'Test 2: Double the normal speed of a video': browser => {
-        youtube.changeSpeedOfVideo('Community Payday Rap');
+        youtube.changeSpeedOfVideo('The Cast of Community Reunites for Table Read #stayhome #withme');
         browser.keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.ENTER)
         youtube.pause(10000).expect.element('@volumeSwitcher').text.to.contain('2');
     },
 
     'Test 3: Cut the speed of the video to a quarter of normal speed': browser => {
-        youtube.changeSpeedOfVideo('Community Payday Rap');
+        youtube.changeSpeedOfVideo('The Cast of Community Reunites for Table Read #stayhome #withme');
         browser.keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.ENTER)
         youtube.pause(10000).expect.element('@volumeSwitcher').text.to.contain('.25');
     },
