@@ -6,7 +6,7 @@ var youtubeCommands = {
             .click('@searchButton')
             .pause(3000)
             .click('@firstVideo')
-            .pause(5000)
+            .pause(3000)
             .expect.element('@titleOfVideoSelected').text.to.contain(name)
         return this
     },
@@ -54,7 +54,7 @@ var youtubeCommands = {
             .expect.element('@bestOfYoutubeArea').to.not.be.visible
         return this
     },
-    createQueue: function (searchTerm1, searchTerm2) {
+    createQueue: function (searchTerm1) {
         this
             .setValue('@searchInput', searchTerm1)
             .pause(2000)
@@ -63,16 +63,35 @@ var youtubeCommands = {
             .click('@listItem1')
             .click('@addVideoQueueButton')
             .click('@youtubeHomeButton')
-            .pause(5000)
+            .click('@searchButton')
+            .click('@listItem2')
+            .click('@addVideoQueueButton')
+            .click('@youtubeHomeButton')
+            .pause(3000)
             .click('@expandVideoButton')
             .click('@playButton')
-            .pause(10000)
+            .pause(3000)
             .expect.element('@queueContainer').to.be.present
-        this.
-            expect.element('@queuePlayList').text.to.equal('1 / 1')
-        this.click('@clearQueueButton') // this will delete the queue that was created
+        this
+            .expect.element('@queuePlayList').text.to.equal('1 / 2')// watch first video in queue
+        this
+            .click('@secondVideoInQueue')
+            .pause(3000)
+            .expect.element('@queuePlayList').text.to.equal('2 / 2');// watch second video in queue
+        this
+            .click('@clearQueueButton') // this will delete the queue that was created
+            .pause(2000)
             .expect.element('@queueContainer').to.not.be.visible
     },
+    generateSuggestedSearchTerms: function (searchTerm) {
+        this
+            .expect.element('@listOfSuggestedSearchTerms').to.not.be.present;// this verifies that the suggestions list will not be present
+        this
+            .setValue('@searchInput', searchTerm)
+            .pause(3000)
+            .expect.element('@listOfSuggestedSearchTerms').to.be.visible;// this verifies that the suggestions list will be present after the user enters a search term
+        return this
+    }
 }
 
 
@@ -194,6 +213,19 @@ module.exports = {
         popUpRemover: {
             selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[15]/div/div[3]/div/div[2]/span/button',
             locateStrategy: 'xpath'
+        },
+        listOfSuggestedSearchTerms: {
+            selector: '/html/body/div/div[2]/div[1]/div/ul',
+            locateStrategy:'xpath'
+        },
+        secondVideoInQueue: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[2]/div/ytd-playlist-panel-renderer/div/div[2]/ytd-playlist-panel-video-renderer[2]/a',
+            locateStrategy: 'xpath'
+        },
+        leftSideMainBar: {
+            selector: '/html/body/ytd-app/div/ytd-mini-guide-renderer',
+            locateStrategy: 'xpath'
         }
     }
 }
+

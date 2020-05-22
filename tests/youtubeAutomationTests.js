@@ -14,15 +14,14 @@ module.exports = {
     'Test 2: Double the normal speed of a video': browser => {
         youtube.changeSpeedOfVideo('The Cast of Community Reunites for Table Read #stayhome #withme');
         browser.keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.ENTER)
-        youtube.pause(10000).expect.element('@volumeSwitcher').text.to.contain('2');
+        youtube.pause(5000).expect.element('@volumeSwitcher').text.to.contain('2');
     },
 
     'Test 3: Cut the speed of the video to a quarter of normal speed': browser => {
         youtube.changeSpeedOfVideo('The Cast of Community Reunites for Table Read #stayhome #withme');
         browser.keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.ENTER)
-        youtube.pause(10000).expect.element('@volumeSwitcher').text.to.contain('.25');
+        youtube.pause(5000).expect.element('@volumeSwitcher').text.to.contain('.25');
     },
-    //     },
     'Test 4: Click each section listed under "Best of Youtube and verify that user is taken to correction section"': browser => {
         youtube.clickBestOfYoutubeSection();
 
@@ -34,6 +33,18 @@ module.exports = {
         youtube.hideLeftSideBar();
     },
     'Test 7: Create a queue of videos to watch': browser => {
-        youtube.createQueue('puppies', 'wolf')
+        youtube.createQueue('puppies')
+    },
+    'Test 8: Generate list of suggestions after a search term is entered': browser => {
+        youtube.generateSuggestedSearchTerms('devmountain')
+    },
+    'Test 9: Verify CSS Grid structures changes when width is decreased': browser => {
+        youtube.expect.element('@bestOfYoutubeArea').to.be.visible// this is when YouTube is diplayed in full screen
+        browser.resizeWindow(1327, 1800).pause(3000)
+        youtube.expect.element('@bestOfYoutubeArea').to.not.be.visible
+        youtube.expect.element('@leftSideMainBar').to.be.visible // This includes sections like Home, Trending, Subscriptions, Library, and History
+        browser.resizeWindow(800, 1800).pause(5000)
+        youtube.expect.element('@bestOfYoutubeArea').to.not.be.visible
+        youtube.expect.element('@leftSideMainBar').to.not.be.visible
     }
 }
