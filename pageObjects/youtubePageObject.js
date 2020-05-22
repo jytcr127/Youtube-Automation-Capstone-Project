@@ -88,7 +88,7 @@ var youtubeCommands = {
             .expect.element('@listOfSuggestedSearchTerms').to.not.be.present;// this verifies that the suggestions list will not be present
         this
             .setValue('@searchInput', searchTerm)
-            .pause(3000)
+            .pause(10000)
             .expect.element('@listOfSuggestedSearchTerms').to.be.visible;// this verifies that the suggestions list will be present after the user enters a search term
         return this
     }
