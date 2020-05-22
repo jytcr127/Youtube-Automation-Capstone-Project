@@ -5,19 +5,19 @@
 
   <testsuite name="youtubeAutomationTests"
     errors="0" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="0"
-    tests="7" time="157.4" timestamp="">
+    tests="7" time="153.8" timestamp="">
   
-    <testcase name="Test 1: Search for a specific music video" classname="youtubeAutomationTests" time="14.53" assertions="1">
+    <testcase name="Test 1: Search for a specific music video" classname="youtubeAutomationTests" time="14.41" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests" time="28.45" assertions="1">
+    <testcase name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests" time="27.59" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests" time="29.08" assertions="1">
+    <testcase name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests" time="29.16" assertions="1">
 
     
     </testcase>
@@ -41,21 +41,21 @@
     
     </testcase>
   
-    <testcase name="Test 5: Change the language to French" classname="youtubeAutomationTests" time="11.33" assertions="2">
+    <testcase name="Test 5: Change the language to French" classname="youtubeAutomationTests" time="10.50" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test 6: Hide left side bar" classname="youtubeAutomationTests" time="4.182" assertions="2">
+    <testcase name="Test 6: Hide left side bar" classname="youtubeAutomationTests" time="3.522" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests" time="25.28" assertions="3">
+    <testcase name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests" time="24.15" assertions="3">
 
     
 
