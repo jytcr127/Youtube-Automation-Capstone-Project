@@ -7,19 +7,17 @@ The YouTube application is being tested to determine its ability to play videos,
 
 ## Running the Project Instructions
 
-#### Download Project Folder:
+#### 1. Download Project Folder
 
-`git clone https://github.com/jytcr127/Youtube-Automation-Capstone-Project.git`
-
-#### Install Nightwatch On Machine:
+#### 2. Install Nightwatch On Machine:
 
 `npm i -g nightwatch`
 
-#### Install chromedriver inside of project folder:
+#### 3. Install chromedriver inside of project folder:
 
 `npm i chromedriver`
 
-#### Execute the test in the project folder with the following command:
+#### 4. Execute the test in the project folder with the following command:
 
 `nightwatch`
 
