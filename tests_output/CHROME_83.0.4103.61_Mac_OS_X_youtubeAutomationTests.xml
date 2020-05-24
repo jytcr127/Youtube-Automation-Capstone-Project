@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="9">
+            tests="10">
 
   <testsuite name="youtubeAutomationTests"
     errors="0" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="0"
-    tests="9" time="160.7" timestamp="">
+    tests="10" time="195.9" timestamp="">
   
-    <testcase name="Test 1: Search for a specific music video" classname="youtubeAutomationTests" time="12.05" assertions="1">
+    <testcase name="Test 1: Search for a specific music video" classname="youtubeAutomationTests" time="12.62" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests" time="22.55" assertions="1">
+    <testcase name="Test 2: Double the normal speed of a video" classname="youtubeAutomationTests" time="23.10" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests" time="22.31" assertions="1">
+    <testcase name="Test 3: Cut the speed of the video to a quarter of normal speed" classname="youtubeAutomationTests" time="23.10" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test 4: Click each section listed under &#34;Best of Youtube and verify that user is taken to correction section&#34;" classname="youtubeAutomationTests" time="44.07" assertions="8">
+    <testcase name="Test 4: Click each section listed under &#34;Best of Youtube and verify that user is taken to correction section&#34;" classname="youtubeAutomationTests" time="44.69" assertions="8">
 
     
 
@@ -31,31 +31,6 @@
     
 
     
-
-    
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test 5: Change the language to French" classname="youtubeAutomationTests" time="10.57" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test 6: Hide left side bar" classname="youtubeAutomationTests" time="3.386" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests" time="20.43" assertions="4">
 
     
 
@@ -66,16 +41,52 @@
     
     </testcase>
   
-    <testcase name="Test 8: Generate list of suggestions after a search term is entered" classname="youtubeAutomationTests" time="13.87" assertions="2">
+    <testcase name="Test 5: Change the language to French" classname="youtubeAutomationTests" time="10.96" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test 9: Verify CSS Grid structures changes when width is decreased" classname="youtubeAutomationTests" time="11.49" assertions="5">
+    <testcase name="Test 6: Hide left side bar" classname="youtubeAutomationTests" time="4.234" assertions="2">
 
     
+
+    
+    </testcase>
+  
+    <testcase name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests" time="20.71" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 8: Generate list of suggestions after a search term is entered" classname="youtubeAutomationTests" time="14.36" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 9: Verify CSS Grid structures changes when width is decreased" classname="youtubeAutomationTests" time="11.94" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test 10: Verify that the pause button will stop the video" classname="youtubeAutomationTests" time="30.13" assertions="4">
 
     
 

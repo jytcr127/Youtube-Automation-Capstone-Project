@@ -91,6 +91,24 @@ var youtubeCommands = {
             .pause(10000)
             .expect.element('@listOfSuggestedSearchTerms').to.be.visible;// this verifies that the suggestions list will be present after the user enters a search term
         return this
+    },
+    playAndPauseButton: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@firstVideo')
+            .waitForElementPresent('@youtubeVideo')
+            .pause(11000)
+            .click('@pauseAndPlayButton')
+            .expect.element('@timeCurrent').text.to.equal('0:10')
+        this
+            .click('@pauseAndPlayButton')
+            .pause(10000)
+            .click('@pauseAndPlayButton')
+            .expect.element('@timeCurrent').text.to.equal('0:20')
+        this.expect.element('@timeOfVideo').text.to.equal('34:34')
     }
 }
 
@@ -102,6 +120,8 @@ module.exports = {
     url: "https://www.youtube.com/",
     commands: [youtubeCommands],
     elements: {
+        youtubeVideo: '#movie_player > div.html5-video-container > video',
+        pauseAndPlayButton: '#movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button',
         expandVideoButton: '#movie_player > div.ytp-miniplayer-ui > div > button.ytp-miniplayer-expand-watch-page-button.ytp-button.ytp-miniplayer-button-top-left',
         searchInput: 'input[id = "search"]',
         firstVideo: 'a[id = "video-title"]',
@@ -224,6 +244,14 @@ module.exports = {
         },
         leftSideMainBar: {
             selector: '/html/body/ytd-app/div/ytd-mini-guide-renderer',
+            locateStrategy: 'xpath'
+        },
+        timeCurrent: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[1]/div/span[1]',
+            locateStrategy: 'xpath'
+        },
+        timeOfVideo: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[1]/div/span[3]',
             locateStrategy: 'xpath'
         }
     }

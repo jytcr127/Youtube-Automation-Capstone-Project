@@ -46,5 +46,9 @@ module.exports = {
         browser.resizeWindow(800, 1800).pause(5000)
         youtube.expect.element('@bestOfYoutubeArea').to.not.be.visible
         youtube.expect.element('@leftSideMainBar').to.not.be.visible
+    },
+    'Test 10: Verify that the pause button will stop the video and play button will continue playing the video': browser => {
+        youtube
+            .playAndPauseButton('The Cast of Community Reunites for Table Read #stayhome #withme')
     }
 }
