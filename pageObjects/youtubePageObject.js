@@ -357,10 +357,6 @@ module.exports = {
         turnCaptionButtonOff: {
             selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[28]/div[2]/div[2]/button[2]',
             locateStrategy: 'xpath'
-        },
-        puppies: {
-            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/iron-collapse/div/ytd-search-filter-group-renderer[2]/ytd-search-filter-renderer[1]',
-            locateStrategy: 'xpath'
         }
     }
 }
