@@ -50,5 +50,21 @@ module.exports = {
     'Test 10: Verify that the pause button will stop the video and play button will continue playing the video': browser => {
         youtube
             .playAndPauseButton('The Cast of Community Reunites for Table Read #stayhome #withme')
+    },
+    'Test 11: Verify that subtitles will appear and disappear when the captions button is clicked': browser => {
+        youtube
+            .wordCaptionFunctionality('The Cast of Community Reunites for Table Read #stayhome #withme')
+    },
+    'Test 12: Filter selections by only displaying videos that were dispalayed this month': browser => {
+        youtube.filterResultsByVideosUploadedThisMonth('community')
+    },
+    'Test 13: Filter selections by only displaying videos that fall under the show cateogry': browser => {
+        youtube.filterResultsByLength('community')
+    },
+    'Test 14: Filter sections by features of the video': browser => {
+        youtube.filterResultsByFeatures('community')
+    },
+    'Test 15: Sort videos by view count': browser => {
+        youtube.sortResultsByViewCount('community')
     }
 }

@@ -17,7 +17,7 @@ var youtubeCommands = {
             .click('@searchButton')
             .pause(3000)
             .click('@firstVideo')
-            .pause(5000)
+            .pause(2000)
             .click('@settingsButton')
             .pause(2000)
             .click('@volumeSwitcher')
@@ -109,6 +109,80 @@ var youtubeCommands = {
             .click('@pauseAndPlayButton')
             .expect.element('@timeCurrent').text.to.equal('0:20')
         this.expect.element('@timeOfVideo').text.to.equal('34:34')
+    },
+    wordCaptionFunctionality: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@firstVideo')
+            .waitForElementPresent('@youtubeVideo')
+            .pause(5000)
+            .click('@turnCaptionsButtonOn')
+            .pause(3000)
+            .expect.element('@captions').to.be.present
+        this
+            .click('@turnCaptionButtonOff')
+            .pause(3000)
+            .expect.element('@captions').to.not.be.present
+    },
+    filterResultsByVideosUploadedThisMonth: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@filterButton')
+            .pause(5000)
+        this
+            .click('@videosThisMonth') // this returns video results of videos uploaded within the last month
+            .click('@filterButton')
+            .assert.cssClassPresent('@videosThisMonth', "selected"); // The selected css class indicates the criteria in videos are being filtered
+    },
+    filterResultsByLength: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@filterButton')
+            .pause(5000)
+        this
+            .click('@shorterThan4Minutes') // this returns video that are 4 minutes or shorter
+            .pause(5000)
+            .click('@filterButton')
+            .assert.cssClassPresent('@shorterThan4Minutes', "selected"); // The selected css class indicates the criteria in videos are being filtered
+    },
+    filterResultsByFeatures: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@filterButton')
+            .pause(5000)
+        this
+            .click('@featureSubtitles') // this returns video results of videos that include subtitles
+            .pause(5000)
+            .click('@filterButton')
+            .pause(5000)
+            .assert.cssClassPresent('@featureSubtitles', "selected"); // The selected css class indicates the criteria in videos are being filtered
+    },
+    sortResultsByViewCount: function (name) {
+        this
+            .setValue('@searchInput', name)
+            .pause(2000)
+            .click('@searchButton')
+            .pause(2000)
+            .click('@filterButton')
+            .pause(5000)
+        this
+            .click('@sortByViewCount') // this returns video results of videos that include subtitles
+            .pause(2000)
+            .click('@filterButton')
+            .pause(2000)
+            .assert.cssClassPresent('@sortByViewCount', "selected"); // The selected css class indicates the criteria in videos are being filtered
     }
 }
 
@@ -120,6 +194,28 @@ module.exports = {
     url: "https://www.youtube.com/",
     commands: [youtubeCommands],
     elements: {
+        sortByRelevance: '#collapse-content > ytd-search-filter-group-renderer:nth-child(5) > ytd-search-filter-renderer.style-scope.ytd-search-filter-group-renderer.selected',
+        sortByUploadDate: '#collapse-content > ytd-search-filter-group-renderer:nth-child(5) > ytd-search-filter-renderer:nth-child(4)',
+        sortByViewCount: '#collapse-content > ytd-search-filter-group-renderer:nth-child(5) > ytd-search-filter-renderer:nth-child(6)',
+        sortByRating: '#collapse-content > ytd-search-filter-group-renderer:nth-child(5) > ytd-search-filter-renderer:nth-child(8)',
+        featureLive: '#collapse-content > ytd-search-filter-group-renderer:nth-child(4) > ytd-search-filter-renderer:nth-child(2)',
+        feature4k: '#collapse-content > ytd-search-filter-group-renderer:nth-child(4) > ytd-search-filter-renderer:nth-child(4)',
+        featureHD: '#collapse-content > ytd-search-filter-group-renderer:nth-child(4) > ytd-search-filter-renderer:nth-child(6)',
+        featureSubtitles: '#collapse-content > ytd-search-filter-group-renderer:nth-child(4) > ytd-search-filter-renderer:nth-child(8)',
+        shorterThan4Minutes: '#collapse-content > ytd-search-filter-group-renderer:nth-child(3) > ytd-search-filter-renderer:nth-child(2)',
+        LongerThan20Minutes:'#collapse-content > ytd-search-filter-group-renderer:nth-child(3) > ytd-search-filter-renderer:nth-child(4)',
+        typeVideo: '#collapse-content > ytd-search-filter-group-renderer:nth-child(2) > ytd-search-filter-renderer:nth-child(2)',
+        typeChannel: '#collapse-content > ytd-search-filter-group-renderer:nth-child(2) > ytd-search-filter-renderer:nth-child(4)',
+        typePlaylist: '#collapse-content > ytd-search-filter-group-renderer:nth-child(2) > ytd-search-filter-renderer:nth-child(6)',
+        typeMovie: '#collapse-content > ytd-search-filter-group-renderer:nth-child(2) > ytd-search-filter-renderer:nth-child(8)',
+        typeShow:'#collapse-content > ytd-search-filter-group-renderer:nth-child(2) > ytd-search-filter-renderer:nth-child(10)',
+        videosInLastHour: '#collapse-content > ytd-search-filter-group-renderer:nth-child(1) > ytd-search-filter-renderer:nth-child(2)',
+        videosToday: '#collapse-content > ytd-search-filter-group-renderer:nth-child(1) > ytd-search-filter-renderer:nth-child(4)',
+        videosThisWeek: '#collapse-content > ytd-search-filter-group-renderer:nth-child(1) > ytd-search-filter-renderer:nth-child(6)',
+        videosThisMonth: '#collapse-content > ytd-search-filter-group-renderer:nth-child(1) > ytd-search-filter-renderer:nth-child(8)',
+        videosThisYear: '#collapse-content > ytd-search-filter-group-renderer:nth-child(1) > ytd-search-filter-renderer:nth-child(10)',
+        filterButton: '#container > ytd-toggle-button-renderer',
+        captions: '#caption-window-1 > span > span:nth-child(1) > span',
         youtubeVideo: '#movie_player > div.html5-video-container > video',
         pauseAndPlayButton: '#movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button',
         expandVideoButton: '#movie_player > div.ytp-miniplayer-ui > div > button.ytp-miniplayer-expand-watch-page-button.ytp-button.ytp-miniplayer-button-top-left',
@@ -252,6 +348,18 @@ module.exports = {
         },
         timeOfVideo: {
             selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[1]/div/span[3]',
+            locateStrategy: 'xpath'
+        },
+        turnCaptionsButtonOn: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[2]/button[2]',
+            locateStrategy: 'xpath'
+        },
+        turnCaptionButtonOff: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[28]/div[2]/div[2]/button[2]',
+            locateStrategy: 'xpath'
+        },
+        puppies: {
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/iron-collapse/div/ytd-search-filter-group-renderer[2]/ytd-search-filter-renderer[1]',
             locateStrategy: 'xpath'
         }
     }
