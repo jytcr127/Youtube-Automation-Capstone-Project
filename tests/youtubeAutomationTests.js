@@ -55,7 +55,7 @@ module.exports = {
         youtube
             .wordCaptionFunctionality('The Cast of Community Reunites for Table Read #stayhome #withme')
     },
-    'Test 12: Filter selections by only displaying videos that were dispalayed this month': browser => {
+    'Test 12: Filter selections by only displaying videos that were uploaded this month': browser => {
         youtube.filterResultsByVideosUploadedThisMonth('community')
     },
     'Test 13: Filter selections by only displaying videos that fall under the show cateogry': browser => {
