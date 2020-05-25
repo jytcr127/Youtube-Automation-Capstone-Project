@@ -102,6 +102,7 @@ var youtubeCommands = {
             .waitForElementPresent('@youtubeVideo')
             .pause(11000)
             .click('@pauseAndPlayButton')
+            .pause(2000)
             .expect.element('@timeCurrent').text.to.equal('0:10')
         this
             .click('@pauseAndPlayButton')
@@ -138,6 +139,7 @@ var youtubeCommands = {
         this
             .click('@videosThisMonth') // this returns video results of videos uploaded within the last month
             .click('@filterButton')
+            .pause(5000)
             .assert.cssClassPresent('@videosThisMonth', "selected"); // The selected css class indicates the criteria in videos are being filtered
     },
     filterResultsByLength: function (name) {
@@ -150,8 +152,9 @@ var youtubeCommands = {
             .pause(5000)
         this
             .click('@shorterThan4Minutes') // this returns video that are 4 minutes or shorter
-            .pause(5000)
+            .pause(2000)
             .click('@filterButton')
+            .pause(5000)
             .assert.cssClassPresent('@shorterThan4Minutes', "selected"); // The selected css class indicates the criteria in videos are being filtered
     },
     filterResultsByFeatures: function (name) {
@@ -164,7 +167,7 @@ var youtubeCommands = {
             .pause(5000)
         this
             .click('@featureSubtitles') // this returns video results of videos that include subtitles
-            .pause(5000)
+            .pause(2000)
             .click('@filterButton')
             .pause(5000)
             .assert.cssClassPresent('@featureSubtitles', "selected"); // The selected css class indicates the criteria in videos are being filtered
@@ -181,7 +184,7 @@ var youtubeCommands = {
             .click('@sortByViewCount') // this returns video results of videos that include subtitles
             .pause(2000)
             .click('@filterButton')
-            .pause(2000)
+            .pause(5000)
             .assert.cssClassPresent('@sortByViewCount', "selected"); // The selected css class indicates the criteria in videos are being filtered
     }
 }
