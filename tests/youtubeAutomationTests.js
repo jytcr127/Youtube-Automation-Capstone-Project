@@ -36,7 +36,7 @@ module.exports = {
         youtube.createQueue('puppies')
     },
     'Test 8: Generate list of suggestions after a search term is entered': browser => {
-        youtube.generateSuggestedSearchTerms('devmountain')
+        youtube.generateSuggestedSearchTerms('devmountai')
     },
     'Test 9: Verify CSS Grid structures changes when width is decreased': browser => {
         youtube.expect.element('@bestOfYoutubeArea').to.be.visible// this is when YouTube is diplayed in full screen

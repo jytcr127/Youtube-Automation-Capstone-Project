@@ -82,13 +82,13 @@ var youtubeCommands = {
             .click('@clearQueueButton') // this will delete the queue that was created
             .pause(2000)
             .expect.element('@queueContainer').to.not.be.visible
+        return this
     },
     generateSuggestedSearchTerms: function (searchTerm) {
         this
-            .expect.element('@listOfSuggestedSearchTerms').to.not.be.present;// this verifies that the suggestions list will not be present
-        this
+            .waitForElementPresent('body', 10000)
             .setValue('@searchInput', searchTerm)
-            .pause(10000)
+            .pause(5000)
             .expect.element('@listOfSuggestedSearchTerms').to.be.visible;// this verifies that the suggestions list will be present after the user enters a search term
         return this
     },
@@ -110,6 +110,7 @@ var youtubeCommands = {
             .click('@pauseAndPlayButton')
             .expect.element('@timeCurrent').text.to.equal('0:20')
         this.expect.element('@timeOfVideo').text.to.equal('34:34')
+        return this
     },
     wordCaptionFunctionality: function (name) {
         this
@@ -127,6 +128,7 @@ var youtubeCommands = {
             .click('@turnCaptionButtonOff')
             .pause(3000)
             .expect.element('@captions').to.not.be.present
+        return this
     },
     filterResultsByVideosUploadedThisMonth: function (name) {
         this
@@ -141,6 +143,7 @@ var youtubeCommands = {
             .click('@filterButton')
             .pause(5000)
             .assert.cssClassPresent('@videosThisMonth', "selected"); // The selected css class indicates the criteria in videos are being filtered
+        return this
     },
     filterResultsByLength: function (name) {
         this
@@ -156,6 +159,7 @@ var youtubeCommands = {
             .click('@filterButton')
             .pause(5000)
             .assert.cssClassPresent('@shorterThan4Minutes', "selected"); // The selected css class indicates the criteria in videos are being filtered
+        return this
     },
     filterResultsByFeatures: function (name) {
         this
@@ -171,6 +175,7 @@ var youtubeCommands = {
             .click('@filterButton')
             .pause(5000)
             .assert.cssClassPresent('@featureSubtitles', "selected"); // The selected css class indicates the criteria in videos are being filtered
+        return this
     },
     sortResultsByViewCount: function (name) {
         this
@@ -186,6 +191,7 @@ var youtubeCommands = {
             .click('@filterButton')
             .pause(5000)
             .assert.cssClassPresent('@sortByViewCount', "selected"); // The selected css class indicates the criteria in videos are being filtered
+        return this
     }
 }
 
