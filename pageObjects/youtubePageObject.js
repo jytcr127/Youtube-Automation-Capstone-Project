@@ -60,6 +60,8 @@ var youtubeCommands = {
             .pause(2000)
             .click('@searchButton')
             .pause(2000)
+            .moveToElement('@listItem1', 50, 50)
+            .pause(5000)
             .click('@listItem1')
             .click('@addVideoQueueButton')
             .click('@youtubeHomeButton')
@@ -70,13 +72,13 @@ var youtubeCommands = {
             .pause(3000)
             .click('@expandVideoButton')
             .click('@playButton')
-            .pause(3000)
+            .pause(10000)
             .expect.element('@queueContainer').to.be.present
         this
             .expect.element('@queuePlayList').text.to.equal('1 / 2')// watch first video in queue
         this
             .click('@secondVideoInQueue')
-            .pause(3000)
+            .pause(10000)
             .expect.element('@queuePlayList').text.to.equal('2 / 2');// watch second video in queue
         this
             .click('@clearQueueButton') // this will delete the queue that was created
@@ -189,7 +191,7 @@ var youtubeCommands = {
             .click('@sortByViewCount') // this returns video results of videos that include subtitles
             .pause(2000)
             .click('@filterButton')
-            .pause(5000)
+            .pause(10000)
             .assert.cssClassPresent('@sortByViewCount', "selected"); // The selected css class indicates the criteria in videos are being filtered
         return this
     }
@@ -232,7 +234,7 @@ module.exports = {
         firstVideo: 'a[id = "video-title"]',
         searchButton: 'button[id = "search-icon-legacy"]',
         titleOfVideoSelected: 'yt-formatted-string[class ="style-scope ytd-video-primary-info-renderer"]',
-        settingsButton: 'button[class = "ytp-button ytp-settings-button"]',
+        settingsButton: 'button[class = "ytp-button ytp-settings-button ytp-hd-quality-badge"]', 
         videoPlaying: 'video[class = "video-stream html5-main-video"]',
         playBackSpeedSetting: 'div[class = "ytp-menuitem-content"]',
         volumeSwitcher: {

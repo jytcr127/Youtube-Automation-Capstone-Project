@@ -46,10 +46,11 @@ module.exports = {
     },
     'Test 9: Verify CSS Grid structures changes when width is decreased': browser => {
         youtube.expect.element('@bestOfYoutubeArea').to.be.visible// this is when YouTube is diplayed in full screen
-        browser.resizeWindow(1327, 1800).pause(3000)
+        youtube.pause(10000)
+        browser.resizeWindow(1327, 1800).pause(10000)
         youtube.expect.element('@bestOfYoutubeArea').to.not.be.visible
         youtube.expect.element('@leftSideMainBar').to.be.visible // This includes sections like Home, Trending, Subscriptions, Library, and History
-        browser.resizeWindow(800, 1800).pause(5000)
+        browser.resizeWindow(800, 1800).pause(10000)
         youtube.expect.element('@bestOfYoutubeArea').to.not.be.visible
         youtube.expect.element('@leftSideMainBar').to.not.be.visible
     },
