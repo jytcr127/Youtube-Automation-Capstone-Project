@@ -10,8 +10,10 @@ module.exports = {
     },
     'Test 1: Search for a specific music video': browser => {
         youtube
-            .searchMusicVideo("NCT U 엔시티 유 'BOSS' MV");
+            .searchMusicVideo("NCT U 엔시티 유 'BOSS' MV")
+            .expect.element('@titleOfVideoSelected').text.to.contain("NCT U 엔시티 유 'BOSS' MV")
     },
+
     'Test 2: Double the normal speed of a video': browser => {
         youtube.changeSpeedOfVideo('The Cast of Community Reunites for Table Read #stayhome #withme');
         browser.keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.DOWN_ARROW).keys(browser.Keys.ENTER)
@@ -23,18 +25,20 @@ module.exports = {
         browser.keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.UP_ARROW).keys(browser.Keys.ENTER)
         youtube.pause(5000).expect.element('@volumeSwitcher').text.to.contain('.25');
     },
+
     'Test 4: Click each section listed under "Best of Youtube and verify that user is taken to correction section"': browser => {
         youtube
             .clickBestOfYoutubeSection();
-
     },
     'Test 5: Change the language to French': browser => { //This will change the display language from English to French
         youtube
-            .changeLanguageToFrench();
+            .changeLanguageToFrench()
+            .expect.element('@bestOfYoutubeHeader').text.to.equal('LE MEILLEUR DE YOUTUBE')
     },
     'Test 6: Hide left side bar': browser => { // this will hide the left side bar that shows sections like "Best of Youtube" and "More from Youtube"
         youtube
-            .hideLeftSideBar();
+            .hideLeftSideBar()
+            .expect.element('@bestOfYoutubeArea').to.not.be.visible
     },
     'Test 7: Create a queue of videos to watch': browser => {
         youtube
@@ -43,6 +47,7 @@ module.exports = {
     'Test 8: Generate list of suggestions after a search term is entered': browser => {
         youtube
             .generateSuggestedSearchTerms('devmountai')
+            .expect.element('@listOfSuggestedSearchTerms').to.be.visible
     },
     'Test 9: Verify CSS Grid structures changes when width is decreased': browser => {
         youtube.expect.element('@bestOfYoutubeArea').to.be.visible// this is when YouTube is diplayed in full screen
@@ -65,17 +70,23 @@ module.exports = {
     'Test 12: Filter selections by only displaying videos that were uploaded this month': browser => {
         youtube
             .filterResultsByVideosUploadedThisMonth('community')
+            .assert.cssClassPresent('@videosThisMonth', "selected"); // The selected css class indicates the criteria in videos are being filtered
+
     },
     'Test 13: Filter selections by only displaying videos that fall under the show cateogry': browser => {
         youtube
             .filterResultsByLength('community')
+            .assert.cssClassPresent('@shorterThan4Minutes', "selected")
     },
     'Test 14: Filter sections by features of the video': browser => {
         youtube
             .filterResultsByFeatures('community')
+            .assert.cssClassPresent('@featureSubtitles', "selected"); // The selected css class indicates the criteria in videos are being filtered
+
     },
     'Test 15: Sort videos by view count': browser => {
         youtube
             .sortResultsByViewCount('community')
+            .assert.cssClassPresent('@sortByViewCount', "selected")
     }
 }

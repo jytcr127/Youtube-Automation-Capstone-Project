@@ -6,8 +6,6 @@ var youtubeCommands = {
             .click('@searchButton')
             .pause(3000)
             .click('@firstVideo')
-            .pause(3000)
-            .expect.element('@titleOfVideoSelected').text.to.contain(name)
         return this
     },
     changeSpeedOfVideo: function (name) {
@@ -41,17 +39,11 @@ var youtubeCommands = {
             .pause(3000)
             .click('@frenchLanguageButton')
             .pause(2000)
-            .expect.element('@bestOfYoutubeHeader').text.to.equal('LE MEILLEUR DE YOUTUBE')// French way of saying best of youtube
-        this
-            .expect.element('@reccomendationsHeader').text.to.equal('Recommandations') // French way of sating reccomendations
         return this
     },
     hideLeftSideBar: function () {
         this
-            .expect.element('@bestOfYoutubeArea').to.be.visible
-        this
             .click('@hideHamburgerButton')
-            .expect.element('@bestOfYoutubeArea').to.not.be.visible
         return this
     },
     createQueue: function (searchTerm1) {
@@ -60,7 +52,7 @@ var youtubeCommands = {
             .pause(2000)
             .click('@searchButton')
             .pause(2000)
-            .moveToElement('@listItem1', 50, 50)
+            .getLocationInView('@listItem1')
             .pause(5000)
             .click('@listItem1')
             .click('@addVideoQueueButton')
@@ -90,8 +82,6 @@ var youtubeCommands = {
         this
             .waitForElementPresent('body', 10000)
             .setValue('@searchInput', searchTerm)
-            .pause(5000)
-            .expect.element('@listOfSuggestedSearchTerms').to.be.visible;// this verifies that the suggestions list will be present after the user enters a search term
         return this
     },
     playAndPauseButton: function (name) {
@@ -143,8 +133,6 @@ var youtubeCommands = {
         this
             .click('@videosThisMonth') // this returns video results of videos uploaded within the last month
             .click('@filterButton')
-            .pause(5000)
-            .assert.cssClassPresent('@videosThisMonth', "selected"); // The selected css class indicates the criteria in videos are being filtered
         return this
     },
     filterResultsByLength: function (name) {
@@ -154,13 +142,11 @@ var youtubeCommands = {
             .click('@searchButton')
             .pause(2000)
             .click('@filterButton')
-            .pause(5000)
+            .pause(2000)
         this
             .click('@shorterThan4Minutes') // this returns video that are 4 minutes or shorter
             .pause(2000)
             .click('@filterButton')
-            .pause(5000)
-            .assert.cssClassPresent('@shorterThan4Minutes', "selected"); // The selected css class indicates the criteria in videos are being filtered
         return this
     },
     filterResultsByFeatures: function (name) {
@@ -175,8 +161,6 @@ var youtubeCommands = {
             .click('@featureSubtitles') // this returns video results of videos that include subtitles
             .pause(2000)
             .click('@filterButton')
-            .pause(5000)
-            .assert.cssClassPresent('@featureSubtitles', "selected"); // The selected css class indicates the criteria in videos are being filtered
         return this
     },
     sortResultsByViewCount: function (name) {
@@ -191,8 +175,6 @@ var youtubeCommands = {
             .click('@sortByViewCount') // this returns video results of videos that include subtitles
             .pause(2000)
             .click('@filterButton')
-            .pause(10000)
-            .assert.cssClassPresent('@sortByViewCount', "selected"); // The selected css class indicates the criteria in videos are being filtered
         return this
     }
 }
@@ -362,11 +344,11 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         turnCaptionsButtonOn: {
-            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[2]/button[2]',
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[27]/div[2]/div[3]/button[2]',
             locateStrategy: 'xpath'
         },
         turnCaptionButtonOff: {
-            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[28]/div[2]/div[2]/button[2]',
+            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[28]/div[2]/div[3]/button[2]',
             locateStrategy: 'xpath'
         }
     }
