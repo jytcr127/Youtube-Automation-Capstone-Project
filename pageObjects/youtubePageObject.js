@@ -27,7 +27,7 @@ var youtubeCommands = {
         for (var i = 0; i < bestOfYoutubeSections.length; i++) {
             this
                 .click(youtubeSectionSelectors[i])
-                .pause(5000)
+                .pause(2000)
                 .expect.element('@subjectHeader').text.to.equal(bestOfYoutubeSections[i])
         }
         return this;
@@ -317,10 +317,6 @@ module.exports = {
         },
         youtubeHomeButton: {
             selector: '/html/body/ytd-app/div/div/ytd-masthead/div[3]/div[1]/ytd-topbar-logo-renderer/a',
-            locateStrategy: 'xpath'
-        },
-        popUpRemover: {
-            selector: '/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[15]/div/div[3]/div/div[2]/span/button',
             locateStrategy: 'xpath'
         },
         listOfSuggestedSearchTerms: {

@@ -4,16 +4,16 @@
             tests="0">
 
   <testsuite name="youtubeAutomationTests"
-    errors="1" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="7"
+    errors="1" failures="0" hostname="" id="" package="youtubeAutomationTests" skipped="15"
     tests="0" time="0.000" timestamp="">
   
 
   
     <system-err>
-      [0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 81&#34;[0m
+      [0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 83&#34;[0m
 [0;90m       at endReadableNT (_stream_readable.js:1129:12)
        at process._tickCallback (internal/process/next_tick.js:63:19)[0m
-[0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 81&#34;[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;session not created: This version of ChromeDriver only supports Chrome version 83&#34;[0m
 [0;90m       at endReadableNT (_stream_readable.js:1129:12)
        at process._tickCallback (internal/process/next_tick.js:63:19)[0m
     </system-err>
@@ -53,6 +53,46 @@
     
     <testcase
       name="Test 7: Create a queue of videos to watch" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 8: Generate list of suggestions after a search term is entered" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 9: Verify CSS Grid structures changes when width is decreased" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 10: Verify that the pause button will stop the video and play button will continue playing the video" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 11: Verify that subtitles will appear and disappear when the captions button is clicked" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 12: Filter selections by only displaying videos that were uploaded this month" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 13: Filter selections by only displaying videos that fall under the show cateogry" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 14: Filter sections by features of the video" classname="youtubeAutomationTests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test 15: Sort videos by view count" classname="youtubeAutomationTests">
       <skipped />
     </testcase>
     
